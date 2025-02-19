@@ -12,7 +12,7 @@ const Home = () => {
     const [showDelete, setShowDelete] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/tasks')
+        axios.get('http://localhost:3001/tasks')
             .then(response => setTasks(response.data.data))
             .catch(error => console.error(error));
     }, [tasks]);

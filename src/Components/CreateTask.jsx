@@ -7,7 +7,7 @@ const CreateTask = ({ onClose }) => {
 
     const handleSaveTask = async () => {
         try {
-            await axios.post("http://localhost:8080/tasks", { title, description });
+            await axios.post("http://localhost:3001/tasks", { title, description });
             onClose(false);
             window.location.reload();
         } catch (err) {
