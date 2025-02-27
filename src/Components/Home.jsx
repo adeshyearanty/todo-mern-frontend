@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UpdateTask from './UpdateTask';
 import DeleteTask from './DeleteTask';
@@ -12,7 +11,7 @@ const Home = () => {
     const [showDelete, setShowDelete] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/tasks')
+        axios.get(`https://todo-mern-backend-mqpe.onrender.com/tasks`)
             .then(response => setTasks(response.data.data))
             .catch(error => console.error(error));
     }, [tasks]);

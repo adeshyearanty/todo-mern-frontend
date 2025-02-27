@@ -6,7 +6,7 @@ const UpdateTask = ({ taskId, onClose }) => {
     const [description, setDescription] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/tasks/${taskId}`)
+        axios.get(`https://todo-mern-backend-mqpe.onrender.com/tasks/${taskId}`)
             .then((res) => {
                 setTitle(res.data.title);
                 setDescription(res.data.description);
@@ -16,7 +16,7 @@ const UpdateTask = ({ taskId, onClose }) => {
 
     const handleEditTask = async () => {
         try {
-            await axios.put(`http://localhost:3001/tasks/${taskId}`, { title, description });
+            await axios.put(`https://todo-mern-backend-mqpe.onrender.com/tasks/${taskId}`, { title, description });
             onClose(false);
         } catch (err) {
             console.error("Error updating task:", err);

@@ -4,7 +4,7 @@ import axios from 'axios';
 const DeleteTask = ({ taskId, onClose }) => {
     const deleteTask = async () => {
         try {
-            await axios.delete(`http://localhost:3001/tasks/${taskId}`);
+            await axios.delete(`https://todo-mern-backend-mqpe.onrender.com/tasks/${taskId}`);
             onClose(false);
         } catch (err) {
             console.error("Error deleting task:", err);
