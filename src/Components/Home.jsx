@@ -11,7 +11,7 @@ const Home = () => {
     const [showDelete, setShowDelete] = useState(null);
 
     useEffect(() => {
-        axios.get(`https://todo-mern-backend-mqpe.onrender.com/tasks`)
+        axios.get('https://todo-mern-backend-mqpe.onrender.com/tasks')
             .then(response => setTasks(response.data.data))
             .catch(error => console.error(error));
     }, [tasks]);
